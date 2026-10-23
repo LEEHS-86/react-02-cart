@@ -85,15 +85,13 @@ return (
                     {item.quantity}
                     <button onClick={() => {
                         handlePlusButton(index)
-                    }}>+
-                    </button>
+                    }}>+</button>
                 </td>
                 <td>수량변경</td>
                 <td>
                     <button onClick={() => {
                         handleDeleteButton(index)
-                    }}>삭제
-                    </button>
+                    }}>삭제</button>
                 </td>
             </tr>)}
             </tbody>
