@@ -17,21 +17,14 @@ function App() {
         setName(e.target.value);
     }
 
-    const handleMinusButton = (item, index) => {
-        if (item.quantity <= 1) {
-            return;
-        }
-        const newCart = [...cart];
-        newCart[index].quantity -= 1;
-        setCart(newCart);
-    }
+    const handleUpdateQuantity = (index, number) => {
 
-    const handlePlusButton = (index) => {
-        if (index .quantity<= 1) {
+        const newCart = [...cart];
+        const nextQuantity = newCart[index].quantity + number;
+        if (nextQuantity < 1) {
             return;
         }
-        const newCart = [...cart];
-        newCart[index].quantity += 1;
+        newCart[index].quantity = nextQuantity;
         setCart(newCart);
     }
 
@@ -81,17 +74,14 @@ return (
             {cart.map((item, index) => <tr key={index}>
                 <td>{item.name}</td>
                 <td>
-                    <button onClick={() => handleMinusButton(item, index)}>-</button>
+                    <button onClick={() => handleUpdateQuantity(index,-10)}>-10</button>
+                    <button onClick={() => handleUpdateQuantity(index,-1)}>-</button>
                     {item.quantity}
-                    <button onClick={() => {
-                        handlePlusButton(index)
-                    }}>+</button>
+                    <button onClick={() => handleUpdateQuantity(index,+1)}>+</button>
+                    <button onClick={() => handleUpdateQuantity(index,+10)}>+10</button>
                 </td>
-                <td>수량변경</td>
                 <td>
-                    <button onClick={() => {
-                        handleDeleteButton(index)
-                    }}>삭제</button>
+                    <button onClick={() => handleDeleteButton(index)}>삭제</button>
                 </td>
             </tr>)}
             </tbody>
