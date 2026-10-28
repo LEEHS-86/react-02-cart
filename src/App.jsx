@@ -60,7 +60,7 @@ function App() {
                 </form>
             </fieldset>
             <div className={styles.tableWrapper}>
-                <table className={styles.table} >
+                <table className={styles.table}>
                     <thead>
                         <tr>
                             <th>상품명</th>
@@ -72,7 +72,6 @@ function App() {
                         {cart.map((item, index) => (
                             <tr key={index}>
                                 <td>{item.name}</td>
-                                <td>{item.quantity}</td>
                                 <td>
                                     <div className={styles.quantityGroup}>
                                         <button

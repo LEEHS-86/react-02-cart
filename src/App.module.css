@@ -53,10 +53,11 @@
     padding: 12px 20px;
     background-color: #3b82f6;
     color: white;
+    font-weight: 600;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: border-color 0.2s;
+    transition: background-color 0.2s;
 }
 
 .submitButton:hover {
@@ -78,7 +79,7 @@
 .table {
     width: 100%;
     border-collapse: collapse;
-    text-align: center;
+    text-align: left;
     font-size: 0.95rem;
 }
 
